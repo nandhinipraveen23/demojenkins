@@ -21,9 +21,9 @@ PATH="${env.PATH};C:\\Users\\User\\AppData\\Local\\Programs\\DockerDesktop\\reso
 
         stage('Build') {
             steps {
-            dir('emprestapi'){
+           
                 bat 'mvn clean package -DskipTests'
-                }
+                
             }
         }
 	
