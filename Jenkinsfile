@@ -33,7 +33,7 @@ PATH="${env.PATH};C:\\Users\\User\\AppData\\Local\\Programs\\DockerDesktop\\reso
 	
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t springbootstujen .'
+                bat 'docker build -t springbootstujen1 .'
             }
         }
 
@@ -46,7 +46,7 @@ PATH="${env.PATH};C:\\Users\\User\\AppData\\Local\\Programs\\DockerDesktop\\reso
 
         stage('Run Container') {
             steps {
-                bat 'docker run -d -p 8080:8080 --name springboot-container springbootstujen'
+                bat 'docker run -d -p 8080:8080 --name springboot-container springbootstujen1'
             }
         }
     }
