@@ -49,5 +49,14 @@ PATH="${env.PATH};C:\\Users\\User\\AppData\\Local\\Programs\\DockerDesktop\\reso
                 bat 'docker run -d -p 8080:8080 --name springboot-container springbootstujen1'
             }
         }
+        
+        stage('Deploy Kubernetes') {
+    steps {
+        bat 'kubectl apply -f deployment.yaml'
+        bat 'kubectl apply -f service.yaml'
+    }
+}
+
+
     }
 }
