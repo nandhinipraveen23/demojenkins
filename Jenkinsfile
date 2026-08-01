@@ -52,8 +52,8 @@ PATH="${env.PATH};C:\\Users\\User\\AppData\\Local\\Programs\\DockerDesktop\\reso
         
         stage('Deploy Kubernetes') {
     steps {
-        bat 'kubectl apply -f deployment.yaml'
-        bat 'kubectl apply -f service.yaml'
+        bat 'kubectl apply -f src/main/resources/deployment.yaml'
+        bat 'kubectl apply -f src/main/resources/service.yaml'
     }
 }
 
