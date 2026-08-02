@@ -3,8 +3,11 @@ pipeline {
 
 environment{
 
-PATH="${env.PATH};C:\\Users\\User\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin"
+    PATH = "${env.PATH};C:\\Users\\User\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin"
+    KUBECONFIG = 'C:\\Users\\User\\.kube\\config'
 }
+
+ 
 
     tools {
         maven 'Maven3'
@@ -50,12 +53,11 @@ PATH="${env.PATH};C:\\Users\\User\\AppData\\Local\\Programs\\DockerDesktop\\reso
             }
         }
         
-        stage('Check Kubernetes') {
+stage('Kubernetes Check') {
     steps {
-        bat 'whoami'
         bat 'echo %KUBECONFIG%'
+        bat 'kubectl config view'
         bat 'kubectl config current-context'
-        bat 'kubectl cluster-info'
         bat 'kubectl get nodes'
     }
 }
