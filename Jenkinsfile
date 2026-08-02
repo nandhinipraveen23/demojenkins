@@ -50,6 +50,15 @@ PATH="${env.PATH};C:\\Users\\User\\AppData\\Local\\Programs\\DockerDesktop\\reso
             }
         }
         
+        stage('Check Kubernetes') {
+    steps {
+        bat 'whoami'
+        bat 'echo %KUBECONFIG%'
+        bat 'kubectl config current-context'
+        bat 'kubectl cluster-info'
+        bat 'kubectl get nodes'
+    }
+}
         stage('Deploy Kubernetes') {
     steps {
         bat 'kubectl apply -f src/main/resources/deployment.yaml'
