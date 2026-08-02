@@ -24,7 +24,7 @@ spec:
 
       - name: springboot-container
 
-        image: lucycyrus/springbootstujen1:1.0
+        image: lucycyrus/springbootstujen1
 
         ports:
         - containerPort: 8080
